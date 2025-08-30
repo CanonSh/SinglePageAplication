@@ -1,13 +1,13 @@
 import React from 'react'
+import { Biblioteca } from '../biblioteca/Biblioteca'
 import { Reproductor } from '../../components/reproductor'
-import { Biblioteca } from '../biblioteca/biblioteca'
 
 export const Home = () => {
   return (
     <div >
       <Biblioteca />
       <Reproductor />
-    </div>
+      </div>
   )
 }
 
