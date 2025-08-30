@@ -1,0 +1,38 @@
+import React from 'react'
+
+export const SongCards = () => {
+  return (
+  <div
+      className="card shadow-sm rounded overflow-hidden h-60"
+      style={{
+        cursor: 'pointer',
+        transition: 'transform 0.2s, box-shadow 0.2s',
+        backgroundColor: 'rgba(20, 20, 20, 1)',
+      }}
+    >
+      <img
+        src='../src/assets/portada_vodka_cranberry.png'
+        className="card-img-top"
+        style={{
+          objectFit: 'cover',
+          height: '100px',
+          width: '100%',
+        }}
+      />
+      <div className="card-body text-center p-2" style={{ color: 'white' }}>
+        <h6 className="card-title mb-1">Cancion</h6>
+        <p className="card-text  mb-0">Autor</p>
+      </div>
+
+      {/* Hover effect con inline style */}
+      <style>
+        {`
+          .card:hover {
+            transform: translateY(-50px);
+            box-shadow: 0 8px 20px rgba(88, 88, 88, 0.97);
+          }
+        `}
+      </style>
+    </div>
+  )
+}
