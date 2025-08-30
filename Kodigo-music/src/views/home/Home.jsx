@@ -1,6 +1,6 @@
 import React from 'react'
 import { Biblioteca } from '../biblioteca/Biblioteca'
-import { Reproductor } from '../../components/reproductor'
+import { Reproductor } from '../../components/Reproductor'
 
 export const Home = () => {
   return (
