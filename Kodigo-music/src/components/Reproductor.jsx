@@ -6,6 +6,11 @@ export const Reproductor = () => {
         {/*Portada*/}
         
         <img src='../src/assets/portada_vodka_cranberry.png' style={styles.portada} alt="Portada" />
+                {/*Informacion de la cancion*/}
+        <div style={styles.info}>
+            <h5 style={{margin:0}}>Vodka Cranberry</h5>
+            <p style={{margin:0,fontSize:"1rem",color:"#eeeeeeff"}}>Conan Gray</p>
+        </div>
         {/*Botones de reproduccion*/}
         <div style={styles.controles}>
             <button style={styles.btn}>⏮️</button>
@@ -13,11 +18,6 @@ export const Reproductor = () => {
             <button style={styles.btn}>⏭️</button>
         </div>   
 
-        {/*Informacion de la cancion*/}
-        <div style={styles.info}>
-            <h5 style={{margin:0}}>Vodka Cranberry</h5>
-            <p style={{margin:0,fontSize:"1rem",color:"#eeeeeeff"}}>Conan Gray</p>
-        </div>
 
     </div>
   )

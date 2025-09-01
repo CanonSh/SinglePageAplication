@@ -11,11 +11,11 @@ export const SongCards = () => {
       }}
     >
       <img
-        src='../src/assets/portada_vodka_cranberry.png'
+        src='https://images.vexels.com/media/users/3/354591/isolated/preview/8ee16f2db388937d2ddb2b394ac03a87-diseno-de-portada-de-album-de-discos-de-musica.png'
         className="card-img-top"
         style={{
           objectFit: 'cover',
-          height: '100px',
+          height: '100%',
           width: '100%',
         }}
       />
@@ -23,12 +23,12 @@ export const SongCards = () => {
         <h6 className="card-title mb-1">Cancion</h6>
         <p className="card-text  mb-0">Autor</p>
       </div>
+      <button style={{ background: 'transparent', border: 'none', fontSize:'2rem' }} >▶️</button>
 
-      {/* Hover effect con inline style */}
       <style>
         {`
           .card:hover {
-            transform: translateY(-50px);
+            transform: translateY(-10px);
             box-shadow: 0 8px 20px rgba(88, 88, 88, 0.97);
           }
         `}
