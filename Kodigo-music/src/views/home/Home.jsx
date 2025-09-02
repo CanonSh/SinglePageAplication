@@ -2,6 +2,7 @@ import React from 'react'
 import { Biblioteca } from '../biblioteca/Biblioteca'
 import { Reproductor } from '../../components/Reproductor'
 import { Cabecera } from '../../components/Cabecera'
+import { BotonFormulario } from '../../components/BotonFormulario'
 
 export const Home = () => {
   return (
@@ -9,6 +10,7 @@ export const Home = () => {
       <Cabecera />
       <Biblioteca />
       <Reproductor />
+      <BotonFormulario />
       </div>
   )
 }
