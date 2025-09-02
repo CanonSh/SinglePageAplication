@@ -6,11 +6,13 @@ import { BotonFormulario } from '../../components/BotonFormulario'
 
 export const Home = () => {
   return (
-    <div style={{display: 'flex',flexDirection:'column',alignItems:'center'}}>
+    <div>
       <Cabecera />
       <Biblioteca />
-      <Reproductor />
       <BotonFormulario />
+      <div style={{display: 'flex',flexDirection:'column',alignItems:'center'} }>
+        <Reproductor />
+      </div>
       </div>
   )
 }

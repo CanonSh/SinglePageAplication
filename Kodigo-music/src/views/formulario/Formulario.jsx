@@ -1,9 +1,19 @@
 import React from 'react'
+import { useForm } from "react-hook-form";
 
 export const Formulario = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("Datos enviados:", data);
+  };
+
   return (
-    <div>
-     
+    <div>  
       <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6 col-lg-12">
@@ -12,44 +22,60 @@ export const Formulario = () => {
               <h2>Petición de Canción</h2>
             </div>
             <div className="card-body">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 {/* Nombre */}
                 <div className="mb-3">
-                  <label htmlFor="nombreUsuario" className="form-label">
+                  <label className="form-label">
                     Tu Nombre
                   </label>
                   <input
                     type="text"
-                    className="form-control"
-                    id="nombreUsuario"
+                    className={`form-control ${errors.nombreUser ? "is-invalid" : ""}`}
                     placeholder="Escribe tu nombre"
+                    /* */
+                    {...register("nombreUser",{required:"Nombre obligatorio"})}
                   />
+                  {errors.nombreUser && (
+                    <div className="invalid-feedback">{errors.nombreUser.message}</div>
+                  )}
                 </div>
 
                 {/* Email */}
                 <div className="mb-3">
-                  <label htmlFor="emailUsuario" className="form-label">
+                  <label className="form-label">
                     Correo electrónico
                   </label>
                   <input
                     type="email"
-                    className="form-control"
-                    id="emailUsuario"
+                    className={`form-control ${errors.emailUser ? "is-invalid" : ""}`}
                     placeholder="ejemplo@correo.com"
+                    {...register("emailUser", {
+                      required: "Email obligatorio",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Email inválido"
+                      }
+                    })}
                   />
+                  {errors.emailUser && (
+                    <div className="invalid-feedback">{errors.emailUser.message}</div>
+                  )}
                 </div>
 
                 {/* Canción */}
                 <div className="mb-3">
-                  <label htmlFor="nombreCancion" className="form-label">
+                  <label  className="form-label">
                     Nombre de la canción
                   </label>
                   <input
                     type="text"
-                    className="form-control"
-                    id="nombreCancion"
-                    placeholder="Ejemplo: Bohemian Rhapsody"
+                    className={`form-control ${errors.nombreSong ? "is-invalid" : ""}`}
+                    placeholder="Ejemplo: Vodka Cranberry"
+                    {...register("nombreSong", { required: "Nombre de la canción obligatorio" })}
                   />
+                  {errors.nombreSong && (
+                  <div className="invalid-feedback">{errors.nombreSong.message}</div>
+                )}
                 </div>
 
                 {/* Artista */}
@@ -60,7 +86,6 @@ export const Formulario = () => {
                   <input
                     type="text"
                     className="form-control"
-                    id="artista"
                     placeholder="Ejemplo: Queen"
                   />
                 </div>
@@ -70,7 +95,7 @@ export const Formulario = () => {
                   <label htmlFor="genero" className="form-label">
                     Género musical
                   </label>
-                  <select className="form-select" id="genero">
+                  <select className="form-select" >
                     <option value="">Selecciona un género</option>
                     <option>Pop</option>
                     <option>Rock</option>
@@ -88,7 +113,6 @@ export const Formulario = () => {
                   </label>
                   <textarea
                     className="form-control"
-                    id="comentarios"
                     rows="3"
                     placeholder="¿Por qué quieres que agreguemos esta canción?"
                   ></textarea>
