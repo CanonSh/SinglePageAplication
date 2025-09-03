@@ -1,11 +1,10 @@
 import React from 'react'
-
+import portada from "../assets/portada.png"
 export const Reproductor = () => {
   return (
     <div style={styles.reproductor}>
         {/*Portada*/}
-        
-        <img src='../src/assets/portada_vodka_cranberry.png' style={styles.portada} alt="Portada" />
+        <img src={portada}style={styles.portada} alt="Portada" />
                 {/*Informacion de la cancion*/}
         <div style={styles.info}>
             <h5 style={{margin:0}}>Vodka Cranberry</h5>
