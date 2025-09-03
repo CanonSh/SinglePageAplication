@@ -7,10 +7,11 @@ import { BotonFormulario } from '../../components/BotonFormulario'
 export const Home = () => {
   return (
     <div>
-      <Cabecera />
+
+      <div style={{display: 'flex',flexDirection:'column',alignItems:'center'} }>
+              <Cabecera />
       <Biblioteca />
       <BotonFormulario />
-      <div style={{display: 'flex',flexDirection:'column',alignItems:'center'} }>
         <Reproductor />
       </div>
       </div>

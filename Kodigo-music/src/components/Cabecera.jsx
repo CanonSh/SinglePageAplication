@@ -2,7 +2,7 @@
 export const Cabecera = () => {
   return (
     <div>
-        <nav className="navbar" style={{backgroundColor: '#000000ff',borderRadius: '10px',width:'65vw'}}>
+        <nav className="navbar" style={{backgroundColor: '#000000ff',borderRadius: '10px',width:'60vw'}}>
             <div className="container-fluid">
                 <a className="navbar-brand" style={{color:'white'}}>K-music</a>
                 <form className="d-flex" role="search" style={{backgroundColor: 'transparent'}}>
